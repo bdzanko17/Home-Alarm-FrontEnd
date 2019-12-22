@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
   constructor(private testtService: TesttService) {
   }
   title = 'benjo';
+
     ngOnInit(): void {
 
       this.testtService.gett().subscribe(data => this.title = data);
