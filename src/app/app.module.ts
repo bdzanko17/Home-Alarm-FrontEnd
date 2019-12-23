@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HistorijaComponent } from './historija/historija.component';
 import { StatusComponent } from './status/status.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StatusComponent } from './status/status.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [TesttService],
   bootstrap: [AppComponent]

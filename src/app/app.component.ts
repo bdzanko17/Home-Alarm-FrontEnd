@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, KeyValueDiffer, KeyValueDiffers, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TesttService} from '../testt.service';
 import {Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +10,34 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private testtService: TesttService,   private router: Router) {
+  title = 'benjo';
+  subscription: Subscription;
+  intervalId: number;
+
+  constructor(private testtService: TesttService, private router: Router, private location: Location) {
+
   }
 
-  title = 'benjo';
 
   ngOnInit(): void {
+    this.testtService.gett().subscribe(data => {
+      this.title = data;
+    });
+    this.intervalId = setInterval(() => {
+      this.test();
+    }, 5000);
 
-    this.testtService.gett().subscribe(data => this.title = data);
   }
 
-  isHomeRoute() {
-    return this.router.url === '/';
+  test() {
+    this.testtService.gett().subscribe(data => {
+      this.title = data;
+    });
+    location.reload();
   }
 
+  isHomeRoute(){
+    return this.router.url==='/';
+  }
 
 }
