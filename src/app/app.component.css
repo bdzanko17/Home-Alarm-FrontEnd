@@ -5,7 +5,6 @@ div.status {
 
 }
 
-div.naslov {
-  margin: 10px;
-  text-align: center;
+.naslov{
+text-align: center;
 }

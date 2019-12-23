@@ -6,11 +6,13 @@ import {TesttService} from '../testt.service';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HistorijaComponent } from './historija/historija.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HistorijaComponent
+    HistorijaComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,

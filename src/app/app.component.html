@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div class="jumbotron">
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary">Home</button>
+    <button type="button" class="btn btn-secondary" routerLink="/">Home</button>
+    <button type="button" class="btn btn-secondary" routerLink="/status">Status</button>
     <button type="button" class="btn btn-secondary" routerLink="/history">History</button>
   </div>
+  <div *ngIf="isHomeRoute()"> <!--// SAMO DA ISPISUJE NASLOV NA HOME RUTI --->
   <div class="naslov">
     <h1>BMT - RI-KURS</h1>
   </div>
-  <div class="status">
-    <p>{{title}}</p>
   </div>
-</div>
 </body>
 </html>
 <router-outlet></router-outlet>
-
