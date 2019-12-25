@@ -25,19 +25,22 @@ export class AppComponent implements OnInit {
     });
     this.intervalId = setInterval(() => {
       this.test();
-    }, 5000);
+    }, 10000);
 
   }
 
   test() {
     this.testtService.gett().subscribe(data => {
       this.title = data;
+      if (data === 'Alarm je Upaljen') {
+        this.router.navigateByUrl('/status');
+      }
+      console.log('benjo');
     });
-    location.reload();
   }
 
-  isHomeRoute(){
-    return this.router.url==='/';
+  isHomeRoute() {
+    return this.router.url === '/';
   }
 
 }
