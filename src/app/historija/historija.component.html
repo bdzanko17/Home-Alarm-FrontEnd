@@ -1,1 +1,7 @@
-<p>historija works!</p>
+<ul class="list-group ">
+  <li *ngFor="let podatak of lista">
+    <div class="author-list list-group-item">
+      <span class="badge pull-left">{{podatak.id}}</span> {{podatak.vrijeme}}
+    </div>
+  </li>
+</ul>

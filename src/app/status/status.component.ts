@@ -27,6 +27,8 @@ export class StatusComponent implements OnInit, OnDestroy {
     this.intervalId = setInterval(() => {
       this.checkStatus();
     }, 10000);
+
+
   }
 
   checkStatus() {

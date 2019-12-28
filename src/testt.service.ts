@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {log} from 'util';
 import {Location} from '@angular/common';
+import {Baza} from "./app/baza";
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,12 @@ export class TesttService {
     return this.http.get(this.Url, {headers: headersList, responseType: 'text'});
   }
 
+  getFromDatabase(): Observable<Baza[]> {
+    let headersList = new HttpHeaders();
+    headersList = headersList.append('Access-Control-Allow-Origin', '*');
+    return this.http.get<Baza[]>(this.Url + 'baza', {headers: headersList, responseType: 'json'});
+  }
+
   postt(): Observable<any> {
 
     const obj = {name: 'John'};
@@ -30,7 +37,10 @@ export class TesttService {
     });
 
 
-    return this.http.post<string>(this.Url + 'ugasi', JSON.stringify(obj), {headers: httpHeaders, responseType: 'json'});
+    return this.http.post<string>(this.Url + 'ugasi', JSON.stringify(obj), {
+      headers: httpHeaders,
+      responseType: 'json'
+    });
   }
 
 }
