@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary" routerLink="/">Home</button>
-    <button type="button" class="btn btn-secondary" routerLink="/status">Status</button>
-    <button type="button" class="btn btn-secondary" routerLink="/history">History</button>
+<nav class="navbar navbar-light bg-transparent">
+  <div class="btn-group" role="group">
+
+    <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+      Menu
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" routerLink="/">Home</a>
+      <a class="dropdown-item" routerLink="status">Status</a>
+      <a class="dropdown-item" routerLink="history">History</a>
+    </div>
   </div>
-  <div *ngIf="isHomeRoute()"> <!--// SAMO DA ISPISUJE NASLOV NA HOME RUTI --->
+</nav>
+
+<div *ngIf="isHomeRoute()"> <!--// SAMO DA ISPISUJE NASLOV NA HOME RUTI --->
   <div class="naslov">
-    <h1>BMT - RI-KURS</h1>
+    <h6 class="display-1">ALARM-HOME-ASSISTANT </h6>
   </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="assets/gaus.jpg">
+      </div>
+      <div class="col-md-4">
+        <img src="assets/gaus.jpg">
+      </div>
+      <div class="col-md-4">
+        <img src="assets/gaus.jpg">
+      </div>
+    </div>
+
   </div>
+
+</div>
 </body>
 </html>
 <router-outlet></router-outlet>

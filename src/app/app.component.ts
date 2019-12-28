@@ -11,6 +11,7 @@ import {interval, Subscription} from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   intervalId: number;
+
   constructor(private testtService: TesttService, private router: Router) {
 
   }
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.intervalId){
+    if (this.intervalId) {
       clearInterval(this.intervalId);
     }
   }

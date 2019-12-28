@@ -1,10 +1,14 @@
-div.status {
-  background: antiquewhite;
-  font-size: xx-large;
-  margin: 10px;
-
-}
-
 .naslov{
-text-align: center;
+  text-align: center;
+  backdrop-filter: blur();
+background: beige
+}
+.display-1{
+  font-size: x-large;
+}
+.col-md-4{
+  margin-top: 50px;
+}
+.container >div{
+  margin-left: 50px;
 }

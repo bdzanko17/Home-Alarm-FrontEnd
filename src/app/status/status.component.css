@@ -1,3 +1,12 @@
 .slika{
   text-align: center;
 }
+.dugme{
+  height: 37px;
+  width: 37px;
+  background-image:url('/src/assets/history.png');
+  background-repeat:no-repeat;
+}
+.navbar-light{
+  background: crimson;
+}

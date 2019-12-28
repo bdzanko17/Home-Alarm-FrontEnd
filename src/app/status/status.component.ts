@@ -20,6 +20,9 @@ export class StatusComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.testtService.gett().subscribe(data => {
       this.title = data;
+      if (data === 'Alarm je Upaljen') {
+        this.upaljeno = true;
+      }
     });
     this.intervalId = setInterval(() => {
       this.checkStatus();
@@ -34,6 +37,14 @@ export class StatusComponent implements OnInit, OnDestroy {
         this.upaljeno = true;
       }
       console.log('benjo');
+    });
+  }
+
+  ugasi() {
+    this.testtService.postt().subscribe(test => {
+      console.log(test.stat);
+      this.title = test.stat;
+      this.upaljeno = false;
     });
   }
 

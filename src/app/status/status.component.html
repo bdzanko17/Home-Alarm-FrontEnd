@@ -1,8 +1,9 @@
-<div class="slika" >
-  <img src="assets/falseAlarm.jpg">
-</div>
-<br>
-<p>{{title}}</p>
+<h1>{{title}}</h1>
 <div *ngIf="upaljeno">
-  <button type="button" class="btn btn-secondary">Ugasi</button>
+  <button class="dugme" (click)="ugasi()" >
+    <img src="/src/assets/history.png">
+  </button>
+  <div class="slika" >
+    <img src="assets/falseAlarm.jpg">
+  </div>
 </div>
