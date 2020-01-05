@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
 <body>
-<nav class="navbar navbar-light bg-transparent">
+<nav class="navbar navbar-light bg-transparent ">
   <div class="btn-group" role="group">
-
-    <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-      Menu
-    </button>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <a class="dropdown-item" routerLink="/">Home</a>
-      <a class="dropdown-item" routerLink="status">Status</a>
-      <a class="dropdown-item" routerLink="history">History</a>
-    </div>
+    <!--        <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"-->
+    <!--                aria-haspopup="true" aria-expanded="false">-->
+    <!--          Menu-->
+    <!--        </button>-->
+    <!--        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">-->
+    <!--          <a class="dropdown-item" routerLink="/">Home</a>-->
+    <!--          <a class="dropdown-item" routerLink="status">Status</a>-->
+    <!--          <a class="dropdown-item" routerLink="history">History</a>-->
+    <!--        </div>-->
+    <button type="button" class="btn btn-outline-danger" routerLink="/">Home</button>
+    <button type="button" class="btn btn-outline-danger" routerLink="/status">Status</button>
+    <button type="button" class="btn btn-outline-danger" routerLink="/history">History</button>
   </div>
 </nav>
-
 <div *ngIf="isHomeRoute()"> <!--// SAMO DA ISPISUJE NASLOV NA HOME RUTI --->
   <div class="naslov">
-    <h6 class="display-1">ALARM-HOME-AaSSISTANT </h6>
+    <h6 class="display-1">ALARM ASSISTANT</h6>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <img src="assets/gaus.jpg">
+        <img id="slike" class="slike" src="assets/edin.jpg">
+        <p class="imena">Edin Ibragić</p>
       </div>
       <div class="col-md-4">
-        <img src="assets/gaus.jpg">
+        <img class="slike" src="assets/haris.jpg">
+        <p class="imena">Haris Tarahija </p>
       </div>
       <div class="col-md-4">
-        <img src="assets/gaus.jpg">
+        <img class="slike" src="assets/benjo.jpg">
+        <p class="imena">Benjamin Džanko</p>
       </div>
     </div>
-
   </div>
-
 </div>
 </body>
 </html>

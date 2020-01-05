@@ -13,8 +13,15 @@ export class StatusComponent implements OnInit, OnDestroy {
   intervalId: number;
   title;
   upaljeno = false;
+  color;
+  photo = 'src/assets/pozadina_ugasen.png'
 
   constructor(private testtService: TesttService, private router: Router) {
+  }
+
+  getParallaxImage() {
+   const a = 'url' + '("' + this.photo + '")';
+    return a;
   }
 
   ngOnInit() {
@@ -27,8 +34,6 @@ export class StatusComponent implements OnInit, OnDestroy {
     this.intervalId = setInterval(() => {
       this.checkStatus();
     }, 10000);
-
-
   }
 
   checkStatus() {
@@ -40,6 +45,7 @@ export class StatusComponent implements OnInit, OnDestroy {
       }
       console.log('benjo');
     });
+    this.color = 'red';
   }
 
   ugasi() {

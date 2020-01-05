@@ -1,7 +1,17 @@
-<ul class="list-group ">
-  <li *ngFor="let podatak of lista">
-    <div class="author-list list-group-item">
-      <span class="badge pull-left">{{podatak.id}}</span> {{podatak.vrijeme}}
-    </div>
-  </li>
-</ul>
+<div class="jumbotron">
+  <table id="myTable" class="table table-hover table-dark">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let podatak of lista">
+      <td>{{podatak.id}}</td>
+      <td>{{podatak.vrijeme}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

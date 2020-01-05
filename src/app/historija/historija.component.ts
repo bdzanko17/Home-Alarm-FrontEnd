@@ -17,7 +17,7 @@ export class HistorijaComponent implements OnInit {
     this.testtService.getFromDatabase().subscribe(data => {
       this.lista = data;
       this.lista.forEach(datas => {
-        let x = new Date(datas.vrijeme);
+        const x = new Date(datas.vrijeme);
         datas.vrijeme = x.toDateString() + ' ' + x.toTimeString();
       });
     });
